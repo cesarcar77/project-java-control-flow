@@ -1,21 +1,33 @@
 public class WeatherAdvisor {
+
     public static void main(String[] args) {
-        int temperature = 5; // Temperatura en grados Celsius
+        // El bucle 'for' se encarga de contar desde 1 hasta 100
+        for (int i = 1; i <= 100; i++) {
 
-        System.out.println("The temperature is " + temperature + "°C.");
+            // Creamos una variable String para construir el resultado.
+            // Esto es una forma elegante de manejar la lógica.
+            String resultado = "";
 
-        // TODO: Agrega sentencias if-else aquí para dar consejos climáticos
+            // 1. Verificar si es múltiplo de 3
+            if (i % 3 == 0) {
+                resultado = resultado + "Fizz";
+            }
 
-if (temperature > 30) {
-    System.out.println("It's a hot day. Remember to stay hydrated!");
-} else if (temperature > 20) {
-    System.out.println("It's a nice warm day. Enjoy the weather!");
-} else if (temperature > 10) {
-    System.out.println("It's a bit cool. You might need a light jacket.");
-} else {
-    System.out.println("It's cold. Wear warm clothes!");
+            // 2. Verificar si es múltiplo de 5
+            if (i % 5 == 0) {
+                resultado = resultado + "Buzz";
+            }
 
-
+            // 3. Imprimir el resultado.
+            // Si el número fue múltiplo de 3 y/o 5, 'resultado' tendrá "Fizz", "Buzz" o "FizzBuzz".
+            // Si no fue múltiplo de ninguno, 'resultado' estará vacío.
+            if (resultado.isEmpty()) {
+                // En los demás casos, imprimimos el número
+                System.out.println(i);
+            } else {
+                // Imprimimos "Fizz", "Buzz" o "FizzBuzz"
+                System.out.println(resultado);
+            }
+        }
     }
-}
 }

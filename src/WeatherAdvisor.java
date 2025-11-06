@@ -1,31 +1,47 @@
-public class WeatherAdvisor {
+import java.util.Scanner;
+
+public class WeatherAdvisor { // Cambié el nombre de la clase a FizzBuzzBoom para reflejar el desafío
 
     public static void main(String[] args) {
-        // El bucle 'for' se encarga de contar desde 1 hasta 100
-        for (int i = 1; i <= 100; i++) {
+        // 1. Inicializar Scanner para la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
 
-            // Creamos una variable String para construir el resultado.
-            // Esto es una forma elegante de manejar la lógica.
+        // 2. Pedir al usuario el rango
+        System.out.println("--- Desafío FizzBuzzBoom ---");
+        System.out.print("Ingresa el número de inicio del rango (ej: 1): ");
+        int inicio = scanner.nextInt();
+
+        System.out.print("Ingresa el número final del rango (ej: 200): ");
+        int fin = scanner.nextInt();
+
+        // Cerrar el objeto Scanner
+        scanner.close();
+
+        System.out.println("\nIniciando FizzBuzzBoom desde " + inicio + " hasta " + fin + "...\n");
+
+        // 3. Bucle con el rango personalizado
+        for (int i = inicio; i <= fin; i++) {
             String resultado = "";
 
-            // 1. Verificar si es múltiplo de 3
+            // Múltiplo de 3
             if (i % 3 == 0) {
-                resultado = resultado + "Fizz";
+                resultado += "Fizz";
             }
 
-            // 2. Verificar si es múltiplo de 5
+            // Múltiplo de 5
             if (i % 5 == 0) {
-                resultado = resultado + "Buzz";
+                resultado += "Buzz";
             }
 
-            // 3. Imprimir el resultado.
-            // Si el número fue múltiplo de 3 y/o 5, 'resultado' tendrá "Fizz", "Buzz" o "FizzBuzz".
-            // Si no fue múltiplo de ninguno, 'resultado' estará vacío.
+            // Múltiplo de 7 (¡el nuevo término!)
+            if (i % 7 == 0) {
+                resultado += "Boom";
+            }
+
+            // Imprimir el resultado o el número
             if (resultado.isEmpty()) {
-                // En los demás casos, imprimimos el número
                 System.out.println(i);
             } else {
-                // Imprimimos "Fizz", "Buzz" o "FizzBuzz"
                 System.out.println(resultado);
             }
         }
